@@ -13,13 +13,14 @@ defmodule Hangman.Mixfile do
 
   def application do
     [
+      mod: { Hangman.Application, [] },
       extra_applications: [:logger],
     ]
   end
 
   defp deps do
     [
-      { :dictionary, path: "../dictionary" },      
+      { :dictionary, path: "../dictionary" },
     ]
   end
 end

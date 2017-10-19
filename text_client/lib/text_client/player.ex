@@ -6,8 +6,8 @@ defmodule TextClient.Player do
     end_with_message("You WON!", letters)
   end
 
-  def play(%State{tally: %{ game_state: :lost }, game_service: %{ letters: letters }}) do
-    end_with_message("Sorry, you lost...", letters)
+  def play(%State{tally: %{ game_state: :lost, answer: answer }}) do
+    end_with_message("Sorry, you lost...", answer)
   end
 
   def play(game = %State{ tally: %{ game_state: :good_guess }}) do
